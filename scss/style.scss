@@ -1,0 +1,34 @@
+@import "header";
+@import "main";
+
+header {
+  h1 {
+    @include h1(50px, italic, red, white, 20px)
+  }
+}
+
+main {
+  display: flex;
+  @for $i from 1 through 3 {
+    .div#{$i} {
+      @for $j from 1 through 3 {
+        h#{$j} {
+          @if $j == 1 {
+            @include h(50px, italic)
+          } @else {
+            @include h(20px, italic)
+          }
+        }
+      }
+      @include div(2px*$i, 3px*$i, 6px*$i, 200px*$i);
+      @each $btn, $color in ('like', green), ('dislike', red) {
+        .#{$btn} {
+          background: $color;
+          color: white;
+          border-radius: 4px;
+          box-shadow: 2px 4px 4px 2px black;
+        }
+      }
+    }
+  }
+}

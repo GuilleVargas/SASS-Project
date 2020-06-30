@@ -1,0 +1,22 @@
+  
+@mixin h ($size, $style) {
+    font-size: $size;
+    font-style: $style;
+  }
+  
+  @mixin div ($border, $border-radius, $padding, $width) {
+    border: $border;
+    border-radius: $border-radius;
+    padding: $padding;
+    width: $width;
+    margin: 10px;
+    @if $padding<10px {
+      background: royalblue;
+    }
+    @else if $padding<15px {
+      background: salmon;
+    }
+    @else {
+      background: pink;
+    }
+  }

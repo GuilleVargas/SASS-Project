@@ -1,0 +1,7 @@
+@mixin h1($size, $style, $background,$color, $padding-left) {
+    font-size: $size;
+    font-style: $style;
+    background: $background;
+    color: $color;
+    padding-left: $padding-left;
+  }
